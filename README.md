@@ -6,9 +6,8 @@ Restaurant menu that contains categories, subcategories and items with supportin
 ## Design Wireframe for guest pages:
 
 ## Draw The ERD according to the requirements
-
-
-! [ERD] (docs/erd.png "ERD"")
+![ERD](docs/erd.png "ERD")
+<br>
 * users table represents the restaurants that are registered within the website
 * categories table has all the super and the sub categories 
 * items table that represents the menu items 
