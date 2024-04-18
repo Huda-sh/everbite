@@ -19,7 +19,7 @@ let submit = () => {
 </script>
 
 <template>
-    <main class="grid place-items-center min-h-screen bg-orange-50">
+    <main class="grid place-items-center min-h-screen">
         <div class="container w-1/3 bg-slate-200">
             <div class="heading">Register</div>
             <form action="" class="form" @submit.prevent="submit">
@@ -42,7 +42,8 @@ let submit = () => {
     border-radius: 40px;
     padding: 25px 35px;
     border: 5px solid rgb(255, 255, 255);
-    box-shadow: rgba(255, 196, 60, 0.55) 0px 30px 30px -20px;
+    //box-shadow: rgba(255, 196, 60, 0.55) 0px 30px 30px -20px;
+    box-shadow: rgba(169, 158, 134, 0.44) 0px 0px 50px -5px;
     margin: 20px;
 }
 
