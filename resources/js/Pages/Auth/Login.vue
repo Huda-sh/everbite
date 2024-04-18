@@ -1,6 +1,7 @@
 <script setup>
 import FormInput from "../../Shared/FormInput.vue";
 import {useForm} from "@inertiajs/vue3";
+import PrimaryButton from "../../Shared/PrimaryButton.vue";
 
 let form = useForm({
     email:"",
@@ -21,13 +22,10 @@ let submit = () => {
         <form action="" class="form" @submit.prevent="submit">
             <FormInput v-model="form.email" :error="form.errors.email" type="email" name="email" id="email" placeholder="E-mail"/>
             <FormInput v-model="form.password" :error="form.errors.password" type="password" name="password" id="password" placeholder="Password"/>
-            <button class="login-button" type="submit">Login</button>
+            <PrimaryButton type="submit">Login</PrimaryButton>
         </form>
     </div>
 </main>
-
-
-
 </template>
 
 <style scoped>
@@ -52,29 +50,4 @@ let submit = () => {
 .form {
     margin-top: 20px;
 }
-
-.form .login-button {
-    display: block;
-    width: 100%;
-    font-weight: bold;
-    background: linear-gradient(45deg, #f6ce67 0%, #ffd663 100%);
-    color: white;
-    padding-block: 15px;
-    margin: 20px auto;
-    border-radius: 20px;
-    box-shadow: rgba(255, 196, 60, 0.55) 0px 20px 10px -15px;
-    border: none;
-    transition: all 0.2s ease-in-out;
-}
-
-.form .login-button:hover {
-    transform: scale(1.03);
-    box-shadow: rgba(255, 196, 60, 0.55) 0px 23px 10px -20px;
-}
-
-.form .login-button:active {
-    transform: scale(0.95);
-    box-shadow: rgba(255, 196, 60, 0.55) 0px 15px 10px -10px;
-}
-
 </style>
