@@ -1,9 +1,10 @@
 <script setup>
 
+import Header from "../Shared/Header.vue";
 </script>
 
 <template>
-Hello World
+    <Header/>
 </template>
 
 <style scoped>
