@@ -21,7 +21,7 @@ class CategorySeeder extends Seeder
             ]);
         }
 
-        for ($j = 0; $j < 20; $j++) {
+        for ($j = 0; $j < 25; $j++) {
             Category::create([
                 'name'=>fake()->word(),
                 'user_id'=>1,

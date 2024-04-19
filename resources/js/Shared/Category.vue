@@ -15,7 +15,7 @@ defineProps({
     <div class="rounded-3xl card card bg-white flex-col justify-self-center w-full">
             <DeleteIcon :url="'/category/'+id"/>
         <p class="text-2xl font-semibold mx-12 my-12 mb-8 flex justify-center align-baseline">
-            {{ name }} {{id}}
+            {{ name }}
             <span v-if="discount" class="ms-2 text-sm text-white bg-amber-300 p-1 px-2 rounded-xl">-{{
                     discount
                 }}%</span>
