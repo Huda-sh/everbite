@@ -29,8 +29,8 @@ class GetRestaurantSuperCategories
         if(!$id && Auth::check()){
             $user = Auth::user();
         }
-        elseif ($id){
-            $user = User::find($id);
+        else{
+            $user = User::findOrFail($id);
         }
         return $this->handle($user);
     }
