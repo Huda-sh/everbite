@@ -44,10 +44,9 @@ class HandleInertiaRequests extends Middleware
             $category_path = [];
         } else {
             $category = Category::findOrFail($current_category);
-            $category_temp = $category;
-            while ($category_temp) {
-                $category_path[] = ['id' => $category_temp->id, 'name' => $category->name];
-                $category_temp = $category_temp->parent;
+            while ($category) {
+                $category_path[] = ['id' => $category->id, 'name' => $category->name];
+                $category = $category->parent;
             }
         }
         $category_path = array_reverse($category_path);
