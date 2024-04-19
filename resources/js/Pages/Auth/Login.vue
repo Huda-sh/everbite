@@ -22,7 +22,7 @@ let submit = () => {
         <form action="" class="form" @submit.prevent="submit">
             <FormInput v-model="form.email" :error="form.errors.email" type="email" name="email" id="email" placeholder="E-mail"/>
             <FormInput v-model="form.password" :error="form.errors.password" type="password" name="password" id="password" placeholder="Password"/>
-            <PrimaryButton type="submit">Login</PrimaryButton>
+            <PrimaryButton type="submit" :disabled="form.processing">Login</PrimaryButton>
         </form>
     </div>
 </main>

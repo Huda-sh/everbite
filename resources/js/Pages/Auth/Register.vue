@@ -28,7 +28,7 @@ let submit = () => {
                 <FormInput v-model="form.phone_number" :error="form.errors.phone_number" type="text" name="phone_number" id="phone_number" placeholder="Phone number"/>
                 <FormInput v-model="form.email" :error="form.errors.email" type="email" name="email" id="email" placeholder="E-mail"/>
                 <FormInput v-model="form.password" :error="form.errors.password" type="password" name="password" id="password" placeholder="Password"/>
-                <PrimaryButton type="submit">Register</PrimaryButton>
+                <PrimaryButton type="submit" :disabled="form.processing">Register</PrimaryButton>
             </form>
         </div>
     </main>

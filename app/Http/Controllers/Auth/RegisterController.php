@@ -17,7 +17,7 @@ class RegisterController extends Controller
     public function store(CreateUserRequest $request)
     {
         $data = $request->validated();
-
+        sleep(10);
         User::create($data);
 
         return redirect()->intended('/dashboard');

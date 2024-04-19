@@ -33,5 +33,12 @@ defineProps({
     transform: scale(0.95);
     box-shadow: rgba(255, 196, 60, 0.55) 0px 15px 10px -10px;
 }
+.login-button:disabled{
+    background: #718096;
+    color: #cbdaee;
+}
+.login-button:disabled:hover{
+    transform: none;
+}
 
 </style>
