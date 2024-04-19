@@ -18,7 +18,6 @@ class GetCategoryChildrenAction
     public function handle($id) :  array
     {
         // get the first level categories of a restaurant
-//        dd($id);
         $category = Category::findOrFail($id);
         $children = $category->children->select(['id', 'name']);
         return $children->toArray();

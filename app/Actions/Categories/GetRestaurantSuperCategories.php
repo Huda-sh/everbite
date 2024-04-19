@@ -18,7 +18,6 @@ class GetRestaurantSuperCategories
     public function handle(User $user) :  array
     {
         // get the first level categories of a restaurant
-
         $categories = $user->categories->where('parent_id', null)->select(['id', 'name']);
         return $categories->toArray();
     }
