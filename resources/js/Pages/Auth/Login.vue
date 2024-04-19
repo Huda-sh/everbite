@@ -30,13 +30,11 @@ let submit = () => {
 
 <style scoped>
 .container {
-    //max-width: 350px;
     background: #fff1d6;
     background: linear-gradient(0deg, rgb(255, 253, 247) 0%, rgb(255, 254, 253) 100%);
     border-radius: 40px;
     padding: 25px 35px;
     border: 5px solid rgb(255, 255, 255);
-    //box-shadow: rgba(255, 196, 60, 0.55) 0px 30px 30px -20px;
     box-shadow: rgba(169, 158, 134, 0.44) 0px 0px 50px -5px;
     margin: 20px;
 }
