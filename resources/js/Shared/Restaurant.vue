@@ -10,11 +10,11 @@ defineProps({
 </script>
 
 <template>
-    <div class="rounded-3xl card px-5 py-3">
-        <h2 class="font-bold text-xl mb-5">{{ name }}</h2>
-        <p class="text-gray-400 mb-3">{{ location }}</p>
-        <p class="text-gray-400 mb-5">{{ phone }}</p>
-        <PrimaryButton>Menu</PrimaryButton>
+    <div class="rounded-3xl card px-6 py-3">
+        <h2 class="font-bold text-xl mb-5 text-yellow-500">{{ name }}</h2>
+        <p class="text-gray-500 mb-3">{{ location }}</p>
+        <p class="text-gray-500 mb-5">{{ phone }}</p>
+        <PrimaryButton class="w-full">Menu</PrimaryButton>
     </div>
 </template>
 

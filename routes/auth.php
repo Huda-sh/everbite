@@ -13,7 +13,7 @@ Route::prefix('/login')->name('login.')->group(function () {
         })
         ->name('create');
 
-    Route::post('/login', LoginAction::class);
+    Route::post('', LoginAction::class);
 
 //    Route::delete('/', 'destroy')->name('destroy');
 });

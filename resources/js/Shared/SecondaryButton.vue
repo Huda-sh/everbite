@@ -1,7 +1,5 @@
 <script setup>
-defineProps({
-    type:String
-});
+
 </script>
 
 <template>
@@ -13,13 +11,12 @@ defineProps({
 .login-button {
     display: block;
     font-weight: bold;
-    background: linear-gradient(45deg, #f6ce67 0%, #ffd663 100%);
-    color: white;
+    background: white;
+    color: #ffd663;
     padding-block: 15px;
     border-radius: 20px;
-    box-shadow: rgba(255, 196, 60, 0.55) 0px 20px 10px -15px;
-    border: none;
     transition: all 0.2s ease-in-out;
+    border: #ffd663 solid 2px;
 }
 
 .login-button:hover {

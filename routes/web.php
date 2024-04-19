@@ -8,5 +8,7 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
+Route::get('/dashboard', function (){return Inertia::render('Dashboard/Categories');});
+
 require 'auth.php';
 
