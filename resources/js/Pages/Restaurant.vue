@@ -1,7 +1,7 @@
 <script setup>
 
-import Header from "../../Shared/Header.vue";
-import RestaurantInfo from "../../Shared/RestaurantInfo.vue";
+import Header from "../Shared/Header.vue";
+import RestaurantInfo from "../Shared/RestaurantInfo.vue";
 </script>
 
 <template>

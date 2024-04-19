@@ -11,4 +11,5 @@ Route::get('/', function () {
 Route::get('/dashboard', function (){return Inertia::render('Dashboard/Categories');});
 
 require 'auth.php';
+require 'categories.php';
 

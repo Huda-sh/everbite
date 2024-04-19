@@ -9,7 +9,6 @@ let form = useForm({
 });
 
 let submit = () => {
-    console.log('post req');
     form.post('/login');
 };
 

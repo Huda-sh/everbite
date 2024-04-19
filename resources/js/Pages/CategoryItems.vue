@@ -1,8 +1,8 @@
 <script setup>
 
-import PrimaryButton from "../../Shared/PrimaryButton.vue";
-import BreadCrumps from "../../Shared/BreadCrumps.vue";
-import MenuItem from "../../Shared/MenuItem.vue";
+import PrimaryButton from "../Shared/PrimaryButton.vue";
+import BreadCrumps from "../Shared/BreadCrumps.vue";
+import MenuItem from "../Shared/MenuItem.vue";
 </script>
 
 <template>

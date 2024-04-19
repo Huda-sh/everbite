@@ -5,9 +5,16 @@ import Modal from "./Modal.vue";
 import FormInput from "./FormInput.vue";
 import TextAreaInput from "./TextAreaInput.vue";
 import {useForm} from "@inertiajs/vue3";
-
+defineProps({id:Number});
 let showModal = ref(false);
 
+let form = useForm({
+    name:"",
+    id:0
+});
+let submit = () => {
+    form.post('/category');
+};
 </script>
 <template>
     <PrimaryButton @click="showModal=true" class="w-1/6">Add</PrimaryButton>
@@ -15,16 +22,12 @@ let showModal = ref(false);
         <Modal
             :show="showModal"
             @close="showModal=false">
-            <template #header>Add New Menu Item</template>
+            <template #header>Add New Category</template>
             <template #default>
-                <form class="mt-6">
-                    <FormInput type="email" name="email" id="email" placeholder="Name"/>
-                    <FormInput type="number" name="email" id="email" placeholder="Price"/>
-                    <TextAreaInput name="email" id="email" placeholder="Ingredients ..."/>
+                <form class="mt-6" @submit.prevent="submit">
+                    <FormInput v-model="form.name" :error="form.errors.name" type="name" name="name" id="name" placeholder="Name"/>
+                <PrimaryButton type="submit" class="w-36 float-right" :disabled="form.processing">Add</PrimaryButton>
                 </form>
-            </template>
-            <template #footer>
-                <PrimaryButton type="submit" class="w-36">Add</PrimaryButton>
             </template>
         </Modal>
     </Teleport>

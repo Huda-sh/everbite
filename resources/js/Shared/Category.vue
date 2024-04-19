@@ -1,22 +1,25 @@
 <script setup>
 import DeleteIcon from "./DeleteIcon.vue";
-import PrimaryButton from "./PrimaryButton.vue";
 import SecondaryButton from "./SecondaryButton.vue";
+import UpdateDiscountModal from "./UpdateDiscountModal.vue";
 
 defineProps({
     name: String,
+    id: Number,
+    discount: Number
 });
 </script>
 
 <template>
     <div class="rounded-3xl card card bg-white flex-col justify-self-center w-full">
-        <DeleteIcon/>
+            <DeleteIcon :url="'category/'+id"/>
         <p class="text-2xl font-semibold mx-12 my-12 mb-8 flex justify-center align-baseline">
             {{ name }}
-            <span class="ms-2 text-sm text-white bg-amber-300 p-1 px-2 rounded-xl">-20%</span>
+            <span v-if="discount" class="ms-2 text-sm text-white bg-amber-300 p-1 px-2 rounded-xl">-{{
+                    discount
+                }}%</span>
         </p>
-
-        <SecondaryButton class="mx-auto w-10/12 mb-3">Update Discount</SecondaryButton>
+        <UpdateDiscountModal class="mx-auto w-10/12 mb-3" :id="id" :key="id">Update Discount</UpdateDiscountModal>
     </div>
 </template>
 

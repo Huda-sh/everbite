@@ -19,7 +19,7 @@ class LoginAction
             Session::regenerate();
 //            $request->session()->regenerate();
 
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/restaurant');
         }
 
         return back()->withErrors([

@@ -40,7 +40,6 @@ defineProps({
             </div>
         </div>
         <UpdateDiscountModal class="px-9">Update Discount</UpdateDiscountModal>
-<!--            <SecondaryButton class="mx-auto w-10/12 mb-3">Update Discount</SecondaryButton>-->
     </div>
 </template>
 

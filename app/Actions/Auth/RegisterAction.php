@@ -16,7 +16,7 @@ class RegisterAction
     {
         User::create($data);
         Session::regenerate();
-        return redirect()->intended('/dashboard');
+        return redirect()->intended('/restaurant');
     }
 
     public function rules()

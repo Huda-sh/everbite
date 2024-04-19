@@ -6,6 +6,13 @@ import FormInput from "./FormInput.vue";
 import SecondaryButton from "./SecondaryButton.vue";
 
 let showModal = ref(false);
+defineProps({
+    id:Number,
+});
+
+let submit = ()=>{
+
+};
 </script>
 <template>
     <SecondaryButton @click="showModal=true" class="mx-auto mb-3 px-10">Update Discount</SecondaryButton>

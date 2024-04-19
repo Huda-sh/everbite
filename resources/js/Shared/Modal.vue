@@ -1,4 +1,6 @@
 <script setup>
+import {Link} from "@inertiajs/vue3";
+
 defineProps({
     show: Boolean
 });
@@ -15,17 +17,17 @@ defineProps({
     >
         <div v-if="show" class="modal-mask">
             <div class="modal-container">
+                <div class="icon text-lg mr-0 float-right" @click="$emit('close')">
+                    <div class="rounded-3xl bg-gray-700 text-white px-3 py-1 pt-0 " >
+                        x
+                    </div>
+                </div>
                 <header class="text-xl font-semibold text-amber-500">
                     <slot name="header">default header</slot>
                 </header>
                 <div>
                     <slot>default body</slot>
                 </div>
-                <footer class="footer flex justify-between">
-                        <button @click="$emit('close')">Close</button>
-                    <slot name="footer">
-                    </slot>
-                </footer>
             </div>
         </div>
     </transition>
@@ -48,20 +50,15 @@ defineProps({
     border-radius: 40px;
 }
 
-.footer {
-    border-top: 1px solid #ccc;
-    margin-top: 1rem;
-    padding-top: 0.5rem;
+.icon {
+    transition: all 0.2s ease-in-out;
 }
 
-.footer button {
-    background: #9ca3af;
-    padding: .25rem .75rem;
-    border-radius: 20px;
-    color: white;
+.icon:hover {
+    transform: scale(1.2);
 }
 
-.footer button:hover {
-    background: #5e5b5b;
+.icon:active {
+    transform: scale(0.95);
 }
 </style>
