@@ -1,6 +1,6 @@
 <script setup>
 import PrimaryButton from "./PrimaryButton.vue";
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import Modal from "./Modal.vue";
 import FormInput from "./FormInput.vue";
 import TextAreaInput from "./TextAreaInput.vue";
@@ -12,8 +12,9 @@ let form = useForm({
     name:"",
     id:0
 });
-let submit = () => {
-    form.post('/category');
+let submit = async () => {
+    await form.post('/category');
+    showModal.value = false;
 };
 </script>
 <template>
