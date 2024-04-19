@@ -20,14 +20,6 @@ import AddItemModal from "../../Shared/AddItemModal.vue";
             </div>
             <div class="grid grid-cols-4 gap-8">
 <!--                <Category name="Drinks"/>-->
-
-                <MenuItem name="Shawerma" ingredients="chicken . souce . bread . pickles" price="10$" discount="-20%" after_discount="8$"/>
-                <MenuItem name="Shawerma" ingredients="chicken . souce . bread . pickles" price="10$"/>
-                <MenuItem name="Shawerma" ingredients="chicken . souce . bread . pickles" price="10$" />
-                <MenuItem name="Shawerma" ingredients="chicken . souce . bread . pickles" price="10$" discount="-20%" after_discount="8$"/>
-                <MenuItem name="Shawerma" ingredients="chicken . souce . bread . pickles" price="10$" />
-                <MenuItem name="Shawerma" ingredients="chicken . souce . bread . pickles" price="10$" discount="-20%" after_discount="8$"/>
-                <MenuItem name="Shawerma" ingredients="chicken . souce . bread . pickles" price="10$" />
             </div>
         </template>
     </Home>
