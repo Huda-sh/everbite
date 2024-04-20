@@ -3,7 +3,7 @@ Restaurant menu that contains categories, subcategories and items with supportin
 
 # Development Process
 
-## Design Wireframe for guest pages
+## Design Wireframe
 
 ## Draw The ERD according to the requirements
 ![ERD](docs/erd.png "ERD")
@@ -22,6 +22,8 @@ I couldn't achive offline support because I am implementing SSR
 
 ## Deployment
 deployed app on free hosting
+you can fintd it at [everbitedashboard.hudashakir.serv00.net🔗](everbitedashboard.hudashakir.serv00.net)
 
 ## Perfurmance
 implemented code splitting to achive small bundle size
+here you can find the screenshot of bundle analyzer [Link🔗 ](/docs/stats.html)
