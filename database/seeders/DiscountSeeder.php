@@ -12,8 +12,8 @@ class DiscountSeeder extends Seeder
      */
     public function run(): void
     {
-        foreach ( as $item) {
-            
-        }
+//        foreach ( as $item) {
+//
+//        }
     }
 }

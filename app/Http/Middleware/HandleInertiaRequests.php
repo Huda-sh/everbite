@@ -40,7 +40,7 @@ class HandleInertiaRequests extends Middleware
     {
 
         $user = Auth::user();
-        if ($request->route()->methods[0]=="DELETE")
+        if ($request->route()->methods[0] == "DELETE" || $request->route()->methods[0] == "POST")
             return [];
 
         $category_path = GetCategoryAncestors::run($request->route()->parameter('id'));
@@ -48,6 +48,7 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => [
+                    'id' => $user?->id,
                     'name' => $user?->name,
                     'location' => $user?->location,
                     'phone_number' => $user?->phone_number,
