@@ -14,12 +14,12 @@ class BrowseRestaurantAction
     public function handle($search)
     {
 
-        return User::whereAny(['name', 'location'],'like', "%".$search."%")->select(['id', 'name', 'location', 'phone_number'])->get();
+        return User::select(['id', 'name', 'location', 'phone_number'])->get();
     }
 
-    public function asController(ActionRequest $request)
+    public function asController()
     {
-        return $this->handle($request->search);
+        return $this->handle();
     }
 
     public function htmlResponse($data)
