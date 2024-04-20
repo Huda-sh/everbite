@@ -12,19 +12,19 @@ class AddCategoryAction
 {
     use asAction;
 
-    public function handle($data)
+    public function handle($data, $id = null)
     {
         Category::create([
             'name'=>$data['name'],
             'user_id'=>Auth::id(),
-            'parent_id'=>$data['id'] === 0 ? null : $data['id']
+            'parent_id'=> $id
         ]);
     }
 
-    public function asController(ActionRequest $request)
+    public function asController(ActionRequest $request, $id = null)
     {
         $data = $request->validated();
-        $this->handle($data);
+        $this->handle($data, $id);
         return back();
     }
 

@@ -5,15 +5,19 @@ import Modal from "./Modal.vue";
 import FormInput from "./FormInput.vue";
 import TextAreaInput from "./TextAreaInput.vue";
 import {useForm} from "@inertiajs/vue3";
-defineProps({id:Number});
+
+defineProps({id: Number});
 let showModal = ref(false);
 
 let form = useForm({
-    name:"",
-    id:0
+    name: "",
 });
-let submit = async () => {
-    await form.post('/category');
+let submit = async (id) => {
+    if (id === undefined) {
+        await form.post('/category/');
+    } else {
+        await form.post('/category/' + id);
+    }
     showModal.value = false;
 };
 </script>
@@ -25,9 +29,11 @@ let submit = async () => {
             @close="showModal=false">
             <template #header>Add New Category</template>
             <template #default>
-                <form class="mt-6" @submit.prevent="submit">
-                    <FormInput v-model="form.name" :error="form.errors.name" type="name" name="name" id="name" placeholder="Name"/>
-                <PrimaryButton type="submit" class="w-36 float-right" :disabled="form.processing">Add</PrimaryButton>
+                <form class="mt-6" @submit.prevent="submit(id)">
+                    <FormInput v-model="form.name" :error="form.errors.name" type="name" name="name" id="name"
+                               placeholder="Name"/>
+                    <PrimaryButton type="submit" class="w-36 float-right" :disabled="form.processing">Add
+                    </PrimaryButton>
                 </form>
             </template>
         </Modal>

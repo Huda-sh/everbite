@@ -5,6 +5,7 @@ namespace App\Actions\Items;
 use App\Models\Category;
 use App\Models\Item;
 use Inertia\Inertia;
+use Lorisleiva\Actions\ActionRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 
 class GetItemsAction
@@ -21,16 +22,16 @@ class GetItemsAction
         return $this->handle($id);
     }
 
-    public function htmlResponse(Array $data): \Inertia\Response
+    public function htmlResponse(Array $data, ActionRequest $request): \Inertia\Response
     {
-        return Inertia::render('MenuItems', ['items'=>$data]);
+        return Inertia::render('MenuItems', ['items'=>$data, 'id'=>$request->route()->parameter('id')]);
     }
 
-    public function jsonResponse(Array $data)
+    public function jsonResponse(Array $data, ActionRequest $request)
     {
         return response()->json([
             'status'=>true,
-            'data'=>['items'=>$data]
+            'data'=>['items'=>$data, 'id'=>$request->route()->parameter('id')]
         ], 200);
     }
 }
