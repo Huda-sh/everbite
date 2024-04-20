@@ -5,6 +5,7 @@ import BreadCrumps from "../Shared/BreadCrumps.vue";
 import MenuItem from "../Shared/MenuItem.vue";
 import Restaurant from "@/Pages/Restaurant.vue";
 import AddItemModal from "@/Shared/AddItemModal.vue";
+import AddCategoryModal from "@/Shared/AddCategoryModal.vue";
 
 defineProps({
     items: Array,
@@ -17,8 +18,8 @@ defineProps({
         <template #default>
             <div class="flex justify-between mb-12">
                 <BreadCrumps class="basis-3/4 mt-3"/>
-                <AddItemModal/>
-<!--                <PrimaryButton class="w-1/6">Add</PrimaryButton>-->
+                <AddCategoryModal v-if="items.length === 0" :id="id"/>
+                <AddItemModal :id="id"/>
             </div>
             <div class="grid grid-cols-4 gap-8">
                 <MenuItem v-for="item in items" :name="item.name" :ingredients="item.ingredients"

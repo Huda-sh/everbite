@@ -22,7 +22,7 @@ let submit = async (id) => {
 };
 </script>
 <template>
-    <PrimaryButton @click="showModal=true" class="w-1/6">Add</PrimaryButton>
+    <PrimaryButton @click="showModal=true" class="w-1/6 me-2">Add Category</PrimaryButton>
     <Teleport to="body">
         <Modal
             :show="showModal"

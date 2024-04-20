@@ -25,6 +25,8 @@ class AddCategoryAction
     {
         $data = $request->validated();
         $this->handle($data, $id);
+        if ($id)
+            return redirect()->intended('/category/'.$id);
         return back();
     }
 

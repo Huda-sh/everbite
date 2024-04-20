@@ -37,7 +37,11 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+
         $user = Auth::user();
+        if ($request->route()->methods[0]=="DELETE")
+            return [];
+
         $current_category = $request->route()->parameter('id');
         $category_path = [];
         if (!$current_category) {

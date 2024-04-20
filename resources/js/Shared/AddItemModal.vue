@@ -6,25 +6,32 @@ import FormInput from "./FormInput.vue";
 import TextAreaInput from "./TextAreaInput.vue";
 import {useForm} from "@inertiajs/vue3";
 
+defineProps({id: Number});
+let form = useForm({
+    name: "",
+    price: "",
+    ingredients: "",
+});
 let showModal = ref(false);
-
+let submit = async (id) => {
+    await form.post('/item/' + id);
+    showModal.value = false;
+};
 </script>
 <template>
-    <PrimaryButton @click="showModal=true" class="w-1/6">Add</PrimaryButton>
+    <PrimaryButton @click="showModal=true" class="w-1/6">Add Item</PrimaryButton>
     <Teleport to="body">
         <Modal
             :show="showModal"
             @close="showModal=false">
             <template #header>Add New Menu Item</template>
             <template #default>
-                <form class="mt-6">
-                    <FormInput type="email" name="email" id="email" placeholder="Name"/>
-                    <FormInput type="number" name="email" id="email" placeholder="Price"/>
-                    <TextAreaInput name="email" id="email" placeholder="Ingredients ..."/>
+                <form class="mt-6" @submit.prevent="submit(id)">
+                    <FormInput v-model="form.name" :error="form.errors.name" type="text" name="name" id="name" placeholder="Name"/>
+                    <FormInput v-model="form.price" :error="form.errors.price" type="number" name="price" id="price" placeholder="Price"/>
+                    <TextAreaInput v-model="form.ingredients" :error="form.errors.ingredients" name="ingredients" id="ingredients" placeholder="Ingredients ..."/>
+                    <PrimaryButton type="submit" class="w-36 float-right">Add</PrimaryButton>
                 </form>
-            </template>
-            <template #footer>
-                <PrimaryButton type="submit" class="w-36">Add</PrimaryButton>
             </template>
         </Modal>
     </Teleport>
