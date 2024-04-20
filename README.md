@@ -40,7 +40,7 @@ here you can find the screenshot of bundle analyzer [Link🔗 ](/docs/stats.html
 ## Learning Objectives 📚🤓
 This project provided an excellent opportunity to learn and apply the following concepts:
 - **Laravel Actions:** I explored the use of Laravel Actions to encapsulate complex business logic and improve code organization.  💡
-- **SSR with Inertia:** I implemented Server-Side Rendering (SSR) using Inertia.js, which allowed me to leverage the benefits of SEO and initial page load performance while maintaining a reactive user experience. 🌐
+- **SSR with Inertia:** I implemented Server-Side Rendering (SSR) using Inertia.js, which allowed me to leverage the benefits of initial page load performance while maintaining a reactive user experience. 🌐
 - **Web Performance Techniques:** I employed code splitting and analyzed bundle sizes using tools like the Bundle Analyzer to ensure optimal application performance. 🚀
 
 By focusing on these areas, I aimed to demonstrate my ability to learn new technologies and apply them to create a well-structured and performant web application. 🌟
