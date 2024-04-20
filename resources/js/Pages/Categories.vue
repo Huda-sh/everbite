@@ -21,7 +21,7 @@ defineProps({
                 <AddCategoryModal :id="id"/>
             </div>
             <div class="grid grid-cols-4 gap-8">
-                <Category v-for="category in categories" :name="category.name" :id="category.id"/>
+                <Category v-for="category in categories" :name="category.name" :id="category.id" :discount="category.discount"/>
             </div>
         </template>
     </Restaurant>
