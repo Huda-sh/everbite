@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Actions\Categories\GetCategoryPath;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -42,18 +43,8 @@ class HandleInertiaRequests extends Middleware
         if ($request->route()->methods[0]=="DELETE")
             return [];
 
-        $current_category = $request->route()->parameter('id');
-        $category_path = [];
-        if (!$current_category) {
-            $category_path = [];
-        } else {
-            $category = Category::findOrFail($current_category);
-            while ($category) {
-                $category_path[] = ['id' => $category->id, 'name' => $category->name];
-                $category = $category->parent;
-            }
-        }
-        $category_path = array_reverse($category_path);
+        $category_path = GetCategoryPath::run($request);
+
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => [
