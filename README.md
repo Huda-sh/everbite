@@ -24,7 +24,7 @@ This approach avoids unnecessary relationships while offering flexibility in man
 
 ### 🚀 Deployment 
 
-- See deployed app here: [everbitedashboard.hudashakir.serv00.net](everbitedashboard.hudashakir.serv00.net) 🌐
+- See deployed app here: [http://everbitedashboard.hudashakir.serv00.net](https://everbitedashboard.hudashakir.serv00.net) 🌐
 
 ## Offline Support 📴 
 
