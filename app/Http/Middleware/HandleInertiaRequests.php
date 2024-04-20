@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Actions\Categories\GetCategoryAncestors;
 use App\Models\Category;
 use App\Models\Discount;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
@@ -39,21 +40,38 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-
+        $isAuth = false;
         $user = Auth::user();
 
         if ($request->route()->methods[0] == "DELETE" || $request->route()->methods[0] == "POST")
             return [];
 
-        $category_path = GetCategoryAncestors::run($request->route()->parameter('id'));
+        $isOwner = false;
+        $id = $request->route()->parameter('id');
+        $name = $request->route()->getName();
+        $owner = $user;
+        if ($user) {
+            if ($name != "restaurant" && User::find($id)->id == $user->id) {
+                $isOwner = true;
+            }
+            if (($name != "category.show" || $name != "item.index") && Category::find($id)->user_id == $user->id) {
+                $isOwner = true;
+            }
+            $isAuth = true;
+        }
+        if ($name == "restaurant") $owner = User::find($id);
+        if ($name == "category.show" || $name == "item.index") $owner = Category::find($id)->user;
+        $category_path = GetCategoryAncestors::run($name != "restaurant" ? $id : null);
 
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => [
-                    'id' => $user?->id,
-                    'name' => $user?->name,
-                    'location' => $user?->location,
-                    'phone_number' => $user?->phone_number,
+                    'id' => $owner?->id,
+                    'name' => $owner?->name,
+                    'location' => $owner?->location,
+                    'phone_number' => $owner?->phone_number,
+                    'is_owner'=> $isOwner,
+                    'is_authenticated'=>$isAuth
                 ]
             ],
             'category_path' => $category_path

@@ -1,8 +1,10 @@
 <script setup>
 
 import PrimaryButton from "../Components/PrimaryButton.vue";
+import {Link} from "@inertiajs/vue3";
 
 defineProps({
+    id:Number,
     name:String,
     location:String,
     phone:String
@@ -14,7 +16,9 @@ defineProps({
         <h2 class="font-bold text-xl mb-5 text-yellow-500">{{ name }}</h2>
         <p class="text-gray-500 mb-3">{{ location }}</p>
         <p class="text-gray-500 mb-5">{{ phone }}</p>
+    <Link :href="'/restaurant/'+id">
         <PrimaryButton class="w-full">Menu</PrimaryButton>
+    </Link>
     </div>
 </template>
 

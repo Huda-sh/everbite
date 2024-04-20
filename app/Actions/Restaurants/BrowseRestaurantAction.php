@@ -3,6 +3,7 @@
 namespace App\Actions\Restaurants;
 
 use App\Models\User;
+use Inertia\Inertia;
 use Lorisleiva\Actions\ActionRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 
@@ -21,6 +22,10 @@ class BrowseRestaurantAction
         return $this->handle($request->search);
     }
 
+    public function htmlResponse($data)
+    {
+        return Inertia::render('Home', ['restaurants'=>$data]);
+    }
     public function jsonResponse($data)
     {
         return response()->json([

@@ -4,6 +4,7 @@ import Restaurant from "./Restaurant.vue";
 import BreadCrumps from "../Shared/Components/BreadCrumps.vue";
 import Category from "../Shared/Cards/Category.vue";
 import AddCategoryModal from "../Shared/Modals/AddCategoryModal.vue";
+import {usePage} from "@inertiajs/vue3";
 
 defineProps({
     categories:Array,
@@ -16,8 +17,8 @@ defineProps({
     <Restaurant>
         <template #default>
             <div class="flex justify-between mb-12">
-                <BreadCrumps class="basis-3/4 mt-3"/>
-                <AddCategoryModal :id="id"/>
+                <BreadCrumps :id="id" class="basis-3/4 mt-3"/>
+                <AddCategoryModal v-if="usePage().props.auth.user.is_owner" :id="id"/>
             </div>
             <div class="grid grid-cols-4 gap-8">
                 <Category v-for="category in categories" :name="category.name" :id="category.id" :discount="category.discount"/>

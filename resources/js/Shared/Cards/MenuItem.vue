@@ -3,6 +3,7 @@ import DeleteIcon from "../Components/DeleteIcon.vue";
 import PrimaryButton from "../Components/PrimaryButton.vue";
 import SecondaryButton from "../Components/SecondaryButton.vue";
 import UpdateDiscountModal from "../Modals/UpdateDiscountModal.vue";
+import {usePage} from "@inertiajs/vue3";
 
 defineProps({
     name: String,
@@ -19,7 +20,7 @@ defineProps({
     <div class="
     rounded-3xl card card bg-white flex-col justify-self-center
 ">
-        <DeleteIcon :url="`/item/${id}`"/>
+        <DeleteIcon v-if="usePage().props.auth.user.is_owner" :url="`/item/${id}`"/>
         <div class="m-12">
             <p class="text-2xl font-semibold align-baseline">
                 {{ name }}
@@ -41,7 +42,7 @@ defineProps({
                 </p>
             </div>
         </div>
-        <UpdateDiscountModal class="px-9" :id="id" type="item">Update Discount</UpdateDiscountModal>
+        <UpdateDiscountModal v-if="usePage().props.auth.user.is_owner" class="px-9" :id="id" type="item">Update Discount</UpdateDiscountModal>
     </div>
 </template>
 

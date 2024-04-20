@@ -52,9 +52,13 @@ class GetRestaurantSuperCategories
 
     public function jsonResponse(Array $data)
     {
+        $category = Category::find($data[0]['id']);
         return response()->json([
             'status'=>true,
-            'data'=>['categories'=>$data]
+            'data'=>[
+                'categories'=>$data,
+                'restaurant'=>User::find($category->user_id)
+            ]
         ], 200);
     }
 }

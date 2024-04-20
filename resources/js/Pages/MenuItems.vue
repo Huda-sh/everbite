@@ -19,8 +19,8 @@ let category_path = usePage().props.category_path;
         <template #default>
             <div class="flex justify-between mb-12">
                 <BreadCrumps class="basis-3/4 mt-3"/>
-                <AddCategoryModal v-if="items.length === 0 && category_path.length < 4" :id="id"/>
-                <AddItemModal :id="id"/>
+                <AddCategoryModal  v-if="items.length === 0 && category_path.length < 4 && usePage().props.auth.user.is_owner" :id="id"/>
+                <AddItemModal v-if="usePage().props.auth.user.is_owner" :id="id"/>
             </div>
             <div class="grid grid-cols-4 gap-8">
                 <MenuItem v-for="item in items" :name="item.name" :ingredients="item.ingredients"

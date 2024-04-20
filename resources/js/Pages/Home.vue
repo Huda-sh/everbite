@@ -3,7 +3,13 @@
 import Header from "../Shared/Header.vue";
 import Restaurant from "../Shared/Cards/Restaurant.vue";
 import FormInput from "../Shared/Components/FormInput.vue";
-import PrimaryButton from "@/Shared/Components/PrimaryButton.vue";
+import Inertia, {debounce} from "lodash";
+import {ref, watch} from "vue";
+
+defineProps({
+    restaurants: Array
+})
+
 </script>
 
 <template>
@@ -12,12 +18,11 @@ import PrimaryButton from "@/Shared/Components/PrimaryButton.vue";
     <img src="../../images/banner-home.webp">
 
     <main class="mt-20 w-3/4 mx-auto">
-        <a href="http://everbiteapp.hudashakir.serv00.net/"><PrimaryButton  class="px-12 text-4xl mx-auto">Browse Restaurants</PrimaryButton></a>
-<!--        <h1 class="text-6xl mx-auto w-min">Restaurants</h1>-->
-<!--        <FormInput placeholder="Search" class="mt-3"></FormInput>-->
-<!--        <div class="grid grid-cols-3 gap-10 px-8 py-5">-->
-<!--            <Restaurant name="Abo Abdo" location="Al-Mazzeh" phone="0987654321"/>-->
-<!--        </div>-->
+        <h1 class="text-6xl mx-auto w-min mb-5">Restaurants</h1>
+        <div class="grid grid-cols-3 gap-10 px-8 py-5">
+            <Restaurant v-for="restaurant in restaurants" :name="restaurant.name" :location="restaurant.location"
+                        :id="restaurant.id" :phone="restaurant.phone_number"/>
+        </div>
     </main>
 </template>
 
