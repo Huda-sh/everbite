@@ -5,7 +5,6 @@ import BreadCrumps from "../Shared/BreadCrumps.vue";
 import Category from "../Shared/Category.vue";
 import AddCategoryModal from "../Shared/AddCategoryModal.vue";
 
-
 defineProps({
     categories:Array,
     id:Number

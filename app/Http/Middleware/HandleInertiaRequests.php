@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Actions\Categories\GetCategoryAncestors;
 use App\Models\Category;
+use App\Models\Discount;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Middleware;
@@ -40,6 +41,7 @@ class HandleInertiaRequests extends Middleware
     {
 
         $user = Auth::user();
+
         if ($request->route()->methods[0] == "DELETE" || $request->route()->methods[0] == "POST")
             return [];
 

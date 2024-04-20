@@ -35,8 +35,8 @@ class Category extends Model
         return $this->hasMany(Item::class);
     }
 
-    public function discounts(): \Illuminate\Database\Eloquent\Relations\MorphMany
+    public function discount(): \Illuminate\Database\Eloquent\Relations\MorphOne
     {
-        return $this->morphMany(Discount::class, 'discountable');
+        return $this->morphOne(Discount::class, 'discountable');
     }
 }

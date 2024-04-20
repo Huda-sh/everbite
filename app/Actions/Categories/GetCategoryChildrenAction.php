@@ -36,6 +36,11 @@ class GetCategoryChildrenAction
                         ->where('discountable_type', Category::class)
                         ->first();
                 }
+                if ($parent->user->discount){
+                    $discount = Discount::where('discountable_id', $parent->user->id)
+                        ->where('discountable_type', User::class)
+                        ->first();
+                }
             }
             $child->discount = $discount ? $discount->discount : null;
         }

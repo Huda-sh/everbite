@@ -23,7 +23,7 @@ defineProps({
         <div class="m-12">
             <p class="text-2xl font-semibold align-baseline">
                 {{ name }}
-                <span v-if="discount" class="text-sm text-white bg-amber-300 p-1 px-2 rounded-xl">{{ discount }}</span>
+                <span v-if="discount" class="text-sm text-white bg-amber-300 p-1 px-2 rounded-xl">-{{ discount }}%</span>
             </p>
             <p class="text-xl text-gray-500">
                 {{ ingredients }}
@@ -37,7 +37,7 @@ defineProps({
                     'line-through' : discount
                 }">
           {{ price }}</span>
-                    <span v-if="after_discount" class="text-4xl text-amber-400 me-3">{{ after_discount }}</span>
+                    <span v-if="after_discount" class="text-4xl text-amber-400 me-3">{{ after_discount }}$</span>
                 </p>
             </div>
         </div>

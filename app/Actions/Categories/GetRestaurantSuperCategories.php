@@ -3,6 +3,7 @@
 namespace App\Actions\Categories;
 
 use App\Models\Category;
+use App\Models\Discount;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -18,8 +19,19 @@ class GetRestaurantSuperCategories
     public function handle(User $user) :  array
     {
         // get the first level categories of a restaurant
-        $categories = $user->categories->where('parent_id', null)->select(['id', 'name']);
-        return $categories->toArray();
+        $categories = $user->categories->where('parent_id', null)->load('discount')->select(['id', 'name', 'discount'])->toArray();
+        $discount = Discount::where('discountable_id', $user->id)
+            ->where('discountable_type', User::class)
+            ->first();
+        if ($discount){
+            foreach ($categories as $key => $category) {
+                if (!array_key_exists('discount', $category))
+                    $categories[$key]['discount'] = $discount->discount;
+                else
+                    $categories[$key]['discount'] = $category['discount']['discount'];
+            }
+        }
+        return $categories;
     }
 
     public function asController($id = null): array

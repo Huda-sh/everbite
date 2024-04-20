@@ -10,7 +10,7 @@ import {usePage} from "@inertiajs/vue3";
 
 defineProps({
     items: Array,
-    id:Number
+    id: Number
 });
 let category_path = usePage().props.category_path;
 </script>
@@ -26,8 +26,9 @@ let category_path = usePage().props.category_path;
             <div class="grid grid-cols-4 gap-8">
                 <MenuItem v-for="item in items" :name="item.name" :ingredients="item.ingredients"
                           :price="item.price+'$'" :id="item.id"
+                          :discount="item.discount"
+                          :after_discount="item.after_discount"
                 />
-                <!--                  discount="-20%" after_discount="8$"-->
             </div>
         </template>
     </Restaurant>
