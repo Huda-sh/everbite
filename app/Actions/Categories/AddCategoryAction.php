@@ -14,6 +14,8 @@ class AddCategoryAction
 
     public function handle($data, $id = null)
     {
+        if ($id && GetCategoryAncestors::run($id)->length() == 4)
+            return redirect()->back()->withErrors('The subcategory limit is 4');
         Category::create([
             'name'=>$data['name'],
             'user_id'=>Auth::id(),

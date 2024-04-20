@@ -6,11 +6,13 @@ import MenuItem from "../Shared/MenuItem.vue";
 import Restaurant from "@/Pages/Restaurant.vue";
 import AddItemModal from "@/Shared/AddItemModal.vue";
 import AddCategoryModal from "@/Shared/AddCategoryModal.vue";
+import {usePage} from "@inertiajs/vue3";
 
 defineProps({
     items: Array,
     id:Number
 });
+let category_path = usePage().props.category_path;
 </script>
 
 <template>
@@ -18,7 +20,7 @@ defineProps({
         <template #default>
             <div class="flex justify-between mb-12">
                 <BreadCrumps class="basis-3/4 mt-3"/>
-                <AddCategoryModal v-if="items.length === 0" :id="id"/>
+                <AddCategoryModal v-if="items.length === 0 && category_path.length < 4" :id="id"/>
                 <AddItemModal :id="id"/>
             </div>
             <div class="grid grid-cols-4 gap-8">

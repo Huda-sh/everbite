@@ -6,13 +6,12 @@ use App\Models\Category;
 use Lorisleiva\Actions\ActionRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class GetCategoryPath
+class GetCategoryAncestors
 {
     use asAction;
 
-    public function handle(ActionRequest $request)
+    public function handle($current_category)
     {
-        $current_category = $request->route()->parameter('id');
         $category_path = [];
         if (!$current_category) {
             $category_path = [];
