@@ -2,12 +2,12 @@
 
 namespace App\Actions\Discounts;
 
+use App\Models\Category;
 use App\Models\Discount;
-use App\Models\User;
 use Lorisleiva\Actions\ActionRequest;
 use Lorisleiva\Actions\Concerns\AsAction;
 
-class AddRestaurantDiscountAction
+class UpdateCategoryDiscountAction
 {
     use asAction;
 
@@ -16,7 +16,7 @@ class AddRestaurantDiscountAction
         Discount::updateOrCreate(
             [
                 'discountable_id' => $id,
-                'discountable_type' => User::class
+                'discountable_type' => Category::class
             ],
             [
                 'discount' => $data['discount']

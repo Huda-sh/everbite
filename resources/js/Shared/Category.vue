@@ -20,7 +20,7 @@ defineProps({
                     discount
                 }}%</span>
         </p>
-        <UpdateDiscountModal class="mx-auto w-10/12 mb-3" :id="id" :key="id">Update Discount</UpdateDiscountModal>
+        <UpdateDiscountModal class="mx-auto w-10/12 mb-3" :id="id" :key="id" type="category">Update Discount</UpdateDiscountModal>
     </div>
     </Link>
 </template>

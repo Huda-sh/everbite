@@ -22,7 +22,7 @@ defineProps({
         <DeleteIcon :url="`/item/${id}`"/>
         <div class="m-12">
             <p class="text-2xl font-semibold align-baseline">
-                {{ name }} {{id}}
+                {{ name }}
                 <span v-if="discount" class="text-sm text-white bg-amber-300 p-1 px-2 rounded-xl">{{ discount }}</span>
             </p>
             <p class="text-xl text-gray-500">
@@ -41,7 +41,7 @@ defineProps({
                 </p>
             </div>
         </div>
-        <UpdateDiscountModal class="px-9">Update Discount</UpdateDiscountModal>
+        <UpdateDiscountModal class="px-9" :id="id" type="item">Update Discount</UpdateDiscountModal>
     </div>
 </template>
 

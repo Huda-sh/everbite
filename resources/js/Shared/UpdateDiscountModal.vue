@@ -26,7 +26,7 @@ let submit = async (id, type) => {
 </script>
 
 <template>
-    <SecondaryButton @click="showModal=true" class="mx-auto mb-3 px-10">Update Discount</SecondaryButton>
+    <SecondaryButton @click.stop="showModal=true" class="mx-auto mb-3 px-10">Update Discount</SecondaryButton>
     <Teleport to="body">
         <Modal
             :show="showModal"
