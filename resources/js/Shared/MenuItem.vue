@@ -9,18 +9,20 @@ defineProps({
     ingredients: String,
     price: String,
     discount: String,
-    after_discount: String
+    after_discount: String,
+    id:Number,
 });
+
 </script>
 
 <template>
     <div class="
     rounded-3xl card card bg-white flex-col justify-self-center
 ">
-        <DeleteIcon/>
+        <DeleteIcon :url="`/item/${id}`"/>
         <div class="m-12">
             <p class="text-2xl font-semibold align-baseline">
-                {{ name }}
+                {{ name }} {{id}}
                 <span v-if="discount" class="text-sm text-white bg-amber-300 p-1 px-2 rounded-xl">{{ discount }}</span>
             </p>
             <p class="text-xl text-gray-500">

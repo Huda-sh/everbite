@@ -19,7 +19,7 @@ defineProps({
             </div>
             <div class="grid grid-cols-4 gap-8">
                 <MenuItem v-for="item in items" :name="item.name" :ingredients="item.ingredients"
-                          :price="item.price+'$'"
+                          :price="item.price+'$'" :id="item.id"
                 />
                 <!--                  discount="-20%" after_discount="8$"-->
             </div>
