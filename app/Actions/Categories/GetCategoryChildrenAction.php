@@ -27,13 +27,15 @@ class GetCategoryChildrenAction
     {
         return $this->handle($id);
     }
-    public function htmlResponse(Array $data)
+    public function htmlResponse(Array $data, ActionRequest $request)
     {
+        if ($data == []) return redirect()->intended('/item/'.$request->route()->parameter('id'));
         return Inertia::render('Categories', ['categories'=>$data]);
     }
 
-    public function jsonResponse(Array $data)
+    public function jsonResponse(Array $data, ActionRequest $request)
     {
+        if ($data == []) return redirect()->intended('/item/'.$request->route()->parameter('id'));
         return response()->json([
             'status'=>true,
             'data'=>['categories'=>$data]

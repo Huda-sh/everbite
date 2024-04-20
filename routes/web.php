@@ -12,4 +12,5 @@ Route::get('/dashboard', function (){return Inertia::render('Dashboard/Categorie
 
 require 'auth.php';
 require 'categories.php';
+require 'menu_Items.php';
 
