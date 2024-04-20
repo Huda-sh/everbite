@@ -1,6 +1,6 @@
 <script setup>
 import {usePage} from "@inertiajs/vue3";
-import UpdateDiscountModal from "./UpdateDiscountModal.vue";
+import UpdateDiscountModal from "./Modals/UpdateDiscountModal.vue";
 
 let id = usePage().props.auth.user.id;
 let name = usePage().props.auth.user.name;

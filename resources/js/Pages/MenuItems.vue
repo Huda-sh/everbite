@@ -1,12 +1,11 @@
 <script setup>
 
-import PrimaryButton from "../Shared/PrimaryButton.vue";
-import BreadCrumps from "../Shared/BreadCrumps.vue";
-import MenuItem from "../Shared/MenuItem.vue";
-import Restaurant from "@/Pages/Restaurant.vue";
-import AddItemModal from "@/Shared/AddItemModal.vue";
-import AddCategoryModal from "@/Shared/AddCategoryModal.vue";
+import BreadCrumps from "../Shared/Components/BreadCrumps.vue";
+import MenuItem from "../Shared/Cards/MenuItem.vue";
 import {usePage} from "@inertiajs/vue3";
+import Restaurant from "@/Pages/Restaurant.vue";
+import AddCategoryModal from "@/Shared/Modals/AddCategoryModal.vue";
+import AddItemModal from "@/Shared/Modals/AddItemModal.vue";
 
 defineProps({
     items: Array,

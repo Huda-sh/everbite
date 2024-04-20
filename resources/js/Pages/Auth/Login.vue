@@ -1,7 +1,7 @@
 <script setup>
-import FormInput from "../../Shared/FormInput.vue";
+import FormInput from "../../Shared/Components/FormInput.vue";
 import {useForm} from "@inertiajs/vue3";
-import PrimaryButton from "../../Shared/PrimaryButton.vue";
+import PrimaryButton from "../../Shared/Components/PrimaryButton.vue";
 
 let form = useForm({
     email:"",

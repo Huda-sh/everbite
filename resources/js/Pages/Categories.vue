@@ -1,9 +1,9 @@
 <script setup>
 
 import Restaurant from "./Restaurant.vue";
-import BreadCrumps from "../Shared/BreadCrumps.vue";
-import Category from "../Shared/Category.vue";
-import AddCategoryModal from "../Shared/AddCategoryModal.vue";
+import BreadCrumps from "../Shared/Components/BreadCrumps.vue";
+import Category from "../Shared/Cards/Category.vue";
+import AddCategoryModal from "../Shared/Modals/AddCategoryModal.vue";
 
 defineProps({
     categories:Array,

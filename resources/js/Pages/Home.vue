@@ -1,8 +1,8 @@
 <script setup>
 
 import Header from "../Shared/Header.vue";
-import Restaurant from "../Shared/Restaurant.vue";
-import FormInput from "../Shared/FormInput.vue";
+import Restaurant from "../Shared/Cards/Restaurant.vue";
+import FormInput from "../Shared/Components/FormInput.vue";
 </script>
 
 <template>
