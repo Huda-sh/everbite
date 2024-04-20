@@ -3,7 +3,7 @@
 import PrimaryButton from "../Shared/PrimaryButton.vue";
 import BreadCrumps from "../Shared/BreadCrumps.vue";
 import MenuItem from "../Shared/MenuItem.vue";
-import Home from "@/Pages/Restaurant.vue";
+import Restaurant from "@/Pages/Restaurant.vue";
 
 defineProps({
     items: Array
@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-    <Home>
+    <Restaurant>
         <template #default>
             <div class="flex justify-between mb-12">
                 <BreadCrumps class="basis-3/4 mt-3"/>
@@ -24,7 +24,7 @@ defineProps({
                 <!--                  discount="-20%" after_discount="8$"-->
             </div>
         </template>
-    </Home>
+    </Restaurant>
 </template>
 
 <style scoped>

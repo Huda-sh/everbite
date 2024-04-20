@@ -1,6 +1,6 @@
 <script setup>
 
-import Home from "./Restaurant.vue";
+import Restaurant from "./Restaurant.vue";
 import BreadCrumps from "../Shared/BreadCrumps.vue";
 import Category from "../Shared/Category.vue";
 import AddCategoryModal from "../Shared/AddCategoryModal.vue";
@@ -14,7 +14,7 @@ defineProps({
 </script>
 
 <template>
-    <Home>
+    <Restaurant>
         <template #default>
             <div class="flex justify-between mb-12">
                 <BreadCrumps class="basis-3/4 mt-3"/>
@@ -24,7 +24,7 @@ defineProps({
                 <Category v-for="category in categories" :name="category.name" :id="category.id"/>
             </div>
         </template>
-    </Home>
+    </Restaurant>
 </template>
 
 <style scoped>
