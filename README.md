@@ -34,6 +34,9 @@ Due to the use of SSR, implementing offline support is currently out of scope. H
 implemented code splitting to achive small bundle size
 here you can find the screenshot of bundle analyzer [Link🔗 ](/docs/stats.html)
 
+![Bundle Analyzer Screenshot](docs/bundle_analyzer.png)
+
+
 ## Learning Objectives
 This project provided an excellent opportunity to learn and apply the following concepts:
 - **Laravel Actions:** I explored the use of Laravel Actions to encapsulate complex business logic and improve code organization.
