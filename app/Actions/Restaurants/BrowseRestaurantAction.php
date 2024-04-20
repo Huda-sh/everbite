@@ -11,7 +11,7 @@ class BrowseRestaurantAction
 {
     use asAction;
 
-    public function handle($search)
+    public function handle()
     {
 
         return User::select(['id', 'name', 'location', 'phone_number'])->get();
