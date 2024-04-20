@@ -28,7 +28,7 @@ This approach avoids unnecessary relationships while offering flexibility in man
 
 ## Offline Support
 
-Due to the use of SSR, implementing offline support is currently out of scope. However, alternative approaches like service workers could be explored in the future.
+Due to the use of SSR, implementing offline support is currently out of scope. However, alternative approaches like service workers and indexedDB could be explored in the future.
 
 ## Performance
 implemented code splitting to achive small bundle size
