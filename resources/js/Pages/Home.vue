@@ -2,9 +2,6 @@
 
 import Header from "../Shared/Header.vue";
 import Restaurant from "../Shared/Cards/Restaurant.vue";
-import FormInput from "../Shared/Components/FormInput.vue";
-import Inertia, {debounce} from "lodash";
-import {ref, watch} from "vue";
 
 defineProps({
     restaurants: Array
