@@ -14,7 +14,8 @@ class RegisterAction
 
     public function handle(array $data)
     {
-        User::create($data);
+        $user = User::create($data);
+        Auth::login($user);
         Session::regenerate();
         return redirect()->intended('/restaurant');
     }

@@ -40,7 +40,6 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-
         $isAuth = false;
         $user = Auth::user();
 

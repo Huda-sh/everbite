@@ -19,13 +19,16 @@ class CalculateItemDiscountAction
             ->first();
         if (!$discount && $category) {
             $category_temp = $category;
+            $discount = Discount::where('discountable_id', $category_temp->id)
+                ->where('discountable_type', Category::class)
+                ->first();
             while (!$discount && $category_temp->parent_id) {
                 $category_temp = Category::find($category_temp->parent_id);
                 $discount = Discount::where('discountable_id', $category_temp->id)
                     ->where('discountable_type', Category::class)
                     ->first();
             }
-            if ($category_temp->user->discount){
+            if (!$discount){
                 $discount = Discount::where('discountable_id', $category_temp->user->id)
                     ->where('discountable_type', User::class)
                     ->first();

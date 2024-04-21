@@ -26,9 +26,9 @@ class GetRestaurantSuperCategories
         if ($discount){
             foreach ($categories as $key => $category) {
                 if (!array_key_exists('discount', $category))
-                    $categories[$key]['discount'] = $discount->discount;
+                    $categories[$key]['discount'] = $discount;
                 else
-                    $categories[$key]['discount'] = $category['discount']['discount'];
+                    $categories[$key]['discount'] = $category['discount'];
             }
         }
         return $categories;
