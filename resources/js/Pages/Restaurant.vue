@@ -7,7 +7,7 @@ import RestaurantInfo from "../Shared/RestaurantInfo.vue";
 <template>
     <Header/>
     <RestaurantInfo/>
-    <div class="px-36 py-10 bg-gray-100">
+    <div class="px-20 lg:px-36 py-10 bg-gray-100">
         <slot name="default"></slot>
     </div>
 </template>

@@ -32,6 +32,6 @@ class CalculateItemDiscountAction
             }
         }
 
-        return $discount->discount;
+        return $discount?->discount;
     }
 }

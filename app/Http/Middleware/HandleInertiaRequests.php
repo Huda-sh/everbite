@@ -40,28 +40,33 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
+
         $isAuth = false;
         $user = Auth::user();
 
         if ($request->route()->methods[0] == "DELETE" || $request->route()->methods[0] == "POST")
             return [];
 
+
         $isOwner = false;
         $id = $request->route()->parameter('id');
         $name = $request->route()->getName();
         $owner = $user;
         if ($user) {
-            if ($name != "restaurant" && User::find($id)->id == $user->id) {
+            if ($name == "dashboard") {
                 $isOwner = true;
             }
-            if (($name != "category.show" || $name != "item.index") && Category::find($id)->user_id == $user->id) {
+            else if ($name != "restaurant" && Category::find($id)->user->id == $user->id) {
+                $isOwner = true;
+            }
+            else if (($name != "category.show" || $name != "item.index") && Category::find($id)->user_id == $user->id) {
                 $isOwner = true;
             }
             $isAuth = true;
         }
         if ($name == "restaurant") $owner = User::find($id);
         if ($name == "category.show" || $name == "item.index") $owner = Category::find($id)->user;
-        $category_path = GetCategoryAncestors::run($name != "restaurant" ? $id : null);
+        $category_path = GetCategoryAncestors::run($name != "restaurant" && $name != "dashboard" ? $id : null);
 
         return array_merge(parent::share($request), [
             'auth' => [
@@ -70,8 +75,8 @@ class HandleInertiaRequests extends Middleware
                     'name' => $owner?->name,
                     'location' => $owner?->location,
                     'phone_number' => $owner?->phone_number,
-                    'is_owner'=> $isOwner,
-                    'is_authenticated'=>$isAuth
+                    'is_owner' => $isOwner,
+                    'is_authenticated' => $isAuth
                 ]
             ],
             'category_path' => $category_path

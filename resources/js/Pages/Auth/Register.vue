@@ -20,7 +20,7 @@ let submit = () => {
 
 <template>
     <main class="grid place-items-center min-h-screen">
-        <div class="container w-1/3 bg-slate-200">
+        <div class="container w-10/12 lg:w-1/3 bg-slate-200">
             <div class="heading">Register</div>
             <form action="" class="form" @submit.prevent="submit">
                 <FormInput v-model="form.name" :error="form.errors.name" type="text" name="name" id="name" placeholder="Restaurant name"/>

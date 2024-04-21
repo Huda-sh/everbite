@@ -20,7 +20,7 @@ defineProps({
                 <BreadCrumps :id="id" class="basis-3/4 mt-3"/>
                 <AddCategoryModal v-if="usePage().props.auth.user.is_owner" :id="id"/>
             </div>
-            <div class="grid grid-cols-4 gap-8">
+            <div class="grid lg:grid-cols-4 gap-8">
                 <Category v-for="category in categories" :name="category.name" :id="category.id" :discount="category.discount"/>
             </div>
         </template>
