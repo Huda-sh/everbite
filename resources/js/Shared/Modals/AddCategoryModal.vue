@@ -14,7 +14,7 @@ let form = useForm({
 });
 let submit = async (id) => {
     if (id === undefined) {
-        await form.post('/category/');
+        await form.post('/category');
     } else {
         await form.post('/category/' + id);
     }
