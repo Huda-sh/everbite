@@ -14,7 +14,7 @@ The ERD depicts the following tables and their relationships:
 - 🍽️ **Items**: Represents menu items associated with categories. 
 - 💰 **Discounts**: Supports various discount types using a one-to-one polymorphic relationship with other entities. 
 
-This approach avoids unnecessary relationships while offering flexibility in managing different discount types. 🔄
+> This approach avoids unnecessary relationships while offering flexibility in managing different discount types. 🔄
 
 ### 👩🏻‍💻 Implementation 
 - Laravel 11
@@ -25,6 +25,10 @@ This approach avoids unnecessary relationships while offering flexibility in man
 ### 🚀 Deployment 
 
 - See deployed app here: [http://everbitedashboard.hudashakir.serv00.net](https://everbitedashboard.hudashakir.serv00.net) 🌐
+- Login info for the first restaurant
+
+        email: restaurant@everbite.com
+        password: password
 
 ## Offline Support 📴 
 
