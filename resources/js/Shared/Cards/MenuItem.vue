@@ -38,7 +38,7 @@ defineProps({
                     'line-through' : discount
                 }">
           {{ price }}</span>
-                    <span v-if="after_discount" class="text-4xl text-amber-400 me-3">{{ after_discount }}$</span>
+                    <span v-if="discount" class="text-4xl text-amber-400 me-3">{{ after_discount }}$</span>
                 </p>
             </div>
         </div>

@@ -17,7 +17,7 @@ defineProps({
         <p class="text-2xl font-semibold mx-12 my-12 mb-8 flex justify-center align-baseline">
             {{ name }}
             <span v-if="discount" class="ms-2 text-sm text-white bg-amber-300 p-1 px-2 rounded-xl">-{{
-                    discount
+                    discount.discount
                 }}%</span>
         </p>
         <UpdateDiscountModal v-if="usePage().props.auth.user.is_owner" class="mx-auto w-10/12 mb-3" :id="id" :key="id" type="category">Update Discount</UpdateDiscountModal>

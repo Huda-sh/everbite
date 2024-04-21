@@ -20,7 +20,7 @@ class ItemSeeder extends Seeder
 
         for ($i = 0; $i < 40; $i++) {
             Item::create([
-                'name'=>fake()->name,
+                'name'=>fake()->word,
                 'ingredients'=>fake()->sentence,
                 'price'=>fake()->numberBetween(5, 50),
                 'category_id'=>$categories[array_rand($categories)]->id

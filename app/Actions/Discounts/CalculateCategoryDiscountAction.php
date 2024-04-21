@@ -31,6 +31,6 @@ class CalculateCategoryDiscountAction
                     ->first();
             }
         }
-        return $discount ? $discount->discount : null;
+        return $discount;
     }
 }
