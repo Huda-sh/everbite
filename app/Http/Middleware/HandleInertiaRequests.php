@@ -53,13 +53,14 @@ class HandleInertiaRequests extends Middleware
         $name = $request->route()->getName();
         $owner = $user;
         if ($user) {
-            if ($name == "dashboard") {
+            if ($name == "dashboard" || $name == 'home') {
                 $isOwner = true;
             }
-            else if ($name != "restaurant" && Category::find($id)->user->id == $user->id) {
+
+            else if ($name == "restaurant" && User::find($id)->id == $user->id) {
                 $isOwner = true;
             }
-            else if (($name != "category.show" || $name != "item.index") && Category::find($id)->user_id == $user->id) {
+            else if (($name == "category.show" || $name == "item.index") && Category::find($id)->user_id == $user->id) {
                 $isOwner = true;
             }
             $isAuth = true;
@@ -67,7 +68,6 @@ class HandleInertiaRequests extends Middleware
         if ($name == "restaurant") $owner = User::find($id);
         if ($name == "category.show" || $name == "item.index") $owner = Category::find($id)->user;
         $category_path = GetCategoryAncestors::run($name != "restaurant" && $name != "dashboard" ? $id : null);
-
         return array_merge(parent::share($request), [
             'auth' => [
                 'user' => [

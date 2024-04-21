@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', \App\Actions\Restaurants\BrowseRestaurantAction::class);
+Route::get('/', \App\Actions\Restaurants\BrowseRestaurantAction::class)->name('home');
 Route::get('/restaurant/{id}', \App\Actions\Categories\GetRestaurantSuperCategories::class)->name('restaurant');
 require 'auth.php';
 require 'categories.php';
