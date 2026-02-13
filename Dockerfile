@@ -45,7 +45,6 @@ RUN apk add --no-cache \
         pdo \
         pdo_sqlite \
         pdo_mysql \
-        tokenizer \
         xml \
         zip
 
