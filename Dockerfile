@@ -70,7 +70,8 @@ RUN php artisan config:clear \
 COPY docker/php/php-fpm.conf /usr/local/etc/php-fpm.d/zz-app.conf
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
-RUN mkdir -p /run/nginx
+RUN mkdir -p /run/nginx /var/log/nginx
+COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
 COPY docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
