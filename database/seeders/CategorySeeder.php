@@ -16,16 +16,16 @@ class CategorySeeder extends Seeder
 
         for ($i = 0; $i < 5; $i++) {
             Category::create([
-                'name'=>fake()->word(),
-                'user_id'=>1,
+                'name' => \fake()->word(),
+                'user_id' => 1,
             ]);
         }
 
         for ($j = 0; $j < 25; $j++) {
             Category::create([
-                'name'=>fake()->word(),
-                'user_id'=>1,
-                'parent_id'=>rand(1, 5)
+                'name' => \fake()->word(),
+                'user_id' => 1,
+                'parent_id' => rand(1, 5)
             ]);
         }
     }

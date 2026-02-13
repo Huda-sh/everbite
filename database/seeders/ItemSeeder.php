@@ -20,10 +20,10 @@ class ItemSeeder extends Seeder
 
         for ($i = 0; $i < 40; $i++) {
             Item::create([
-                'name'=>fake()->word,
-                'ingredients'=>fake()->sentence,
-                'price'=>fake()->numberBetween(5, 50),
-                'category_id'=>$categories[array_rand($categories)]->id
+                'name' => \fake()->word(),
+                'ingredients' => \fake()->sentence(),
+                'price' => \fake()->numberBetween(5, 50),
+                'category_id' => $categories[array_rand($categories)]->id
             ]);
         }
     }
@@ -33,10 +33,9 @@ class ItemSeeder extends Seeder
         $leafCategories = [];
         $categories = Category::where('parent_id', $parent_id)->get();
         foreach ($categories as $category) {
-            if ($category->children->isEmpty()){
+            if ($category->children->isEmpty()) {
                 $leafCategories[] = $category;
-            }
-            else{
+            } else {
                 $leafCategories = array_merge($leafCategories, $this->getLeafCategories($category->id));
             }
         }
