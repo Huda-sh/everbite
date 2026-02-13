@@ -12,6 +12,6 @@ if [ ! -f "$DB_PATH" ]; then
 fi
 
 # Run migrations and seeders (safe to run on every start)
-php artisan migrate --force --no-interaction
-
+php artisan migrate --force --no-interaction || true
+php artisan db:seed --force --no-interaction || true
 exec "$@"
